@@ -1,13 +1,17 @@
-Broken is a simple toolkit for testing web applications. It has several features:
+Broken is a simple tool for simulating responses from web applications.
 
-Usage: `broken port`
+Installation:
+`go build broken.go`
+Copy or link the binary to a directory in your PATH.
+
+Usage: `broken port_number`
 Help: `broken [-h] [--help] [help]`
 
 Example: Receive a 403 status code after 10 seconds:
 http://localhost:[port]/?status=403&timeout=10000
 
 Status codes:
-Broken can respond with a status code of your choice. For example, to get a 404, request:
+Broken can respond with a status code of your choice. To get a 404, request:
 http://localhost:[port]/?status=404
 Requests for status codes other than 3 digits cause an error.
 
@@ -16,12 +20,12 @@ To get a response after x milliseconds, request:
 http://localhost:[port]/?sleep=x
 
 Body:
-To insert a body (b) in the response, request:
-http://localhost:[port]/?body=b
+To insert a body in the response, request:
+http://localhost:[port]/?body=body_goes_here
 
 Uptime:
 To get broken's uptime in milliseconds, request:
 http://localhost:5000/up
 
 Error handling:
-On errors, broken returns immediately with a status code of 500 and an error message.
+On errors, broken responds with a status code of 500 and an error message.

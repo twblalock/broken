@@ -16,6 +16,7 @@ func main() {
 	fmt.Println("Valid params:")
 	fmt.Println("\tstatus=status_code: responds with status_code")
 	fmt.Println("\tsleep=sleep_time: responds after sleep_time milliseconds")
+        fmt.Println("\tbody=body: response includes body")
 	fmt.Println("\t/up: responds with uptime in milliseconds")
 	os.Exit(1)
     }
@@ -57,7 +58,7 @@ func main() {
 
     http.HandleFunc("/up", func(w http.ResponseWriter, r *http.Request) {
         fmt.Println(r.URL)
-	fmt.Fprintf(w, "%d\n", time.Since(start) / 1000 / 1000)
+	fmt.Fprintf(w, "%d\n", time.Since(start) / 1000 / 1000) // TODO there must be a better way to get millis
     })
 
     http.ListenAndServe(":" + os.Args[1], nil)
