@@ -25,7 +25,7 @@ http://localhost:[port]/?body=body_goes_here
 
 Uptime:
 To get broken's uptime in milliseconds, request:
-http://localhost:5000/up
+http://localhost:[port]/up
 
 Error handling:
 On errors, broken responds with a status code of 500 and an error message.
