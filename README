@@ -8,7 +8,7 @@ Usage: `broken port_number`
 Help: `broken [-h] [--help] [help]`
 
 Example: Receive a 403 status code after 10 seconds:
-http://localhost:[port]/?status=403&timeout=10000
+http://localhost:[port]/?status=403&sleep=10000
 
 Status codes:
 Broken can respond with a status code of your choice. To get a 404, request:
