@@ -58,7 +58,7 @@ func main() {
 
     http.HandleFunc("/up", func(w http.ResponseWriter, r *http.Request) {
         fmt.Println(r.URL)
-	fmt.Fprintf(w, "%d\n", time.Since(start) / 1000 / 1000) // TODO there must be a better way to get millis
+	fmt.Fprintf(w, "%d\n", time.Since(start) * time.Millisecond)
     })
 
     http.ListenAndServe(":" + os.Args[1], nil)
