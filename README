@@ -4,7 +4,7 @@ Installation:
 `go build broken.go`
 Copy or link the binary to a directory in your PATH.
 
-Usage: `broken port_number`
+Usage: `broken port_number [log_file]`
 Help: `broken [-h] [--help] [help]`
 
 Example: Receive a 403 status code after 10 seconds:
